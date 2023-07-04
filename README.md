@@ -1,3 +1,5 @@
+Not an actual readme, just required for the assignment.
+
 1. Describe how your exchange works.
 The exchange starts by setting up signal handlers for SIGUSR1 and SIGCHLD for inter-process communication, initialising products from the products file and setting up traders. To set up the traders, FIFOs are created for both directions of communication with every trader. The parent process is then forked once for every trader, and using execl each child process runs one of the traders. The exchange then opens each pair of FIFOs in either read or write mode. When all the setup is complete, the market is opened.
 
